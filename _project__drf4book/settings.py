@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'rest_framework',
     'accounts.apps.AccountsConfig',
-    'todo.apps.TodoConfig'
+    'posts.apps.PostsConfig'
 ]
 INTERNAL_IPS = [
     # ...
@@ -89,7 +89,7 @@ DATABASES = {
     'default':
         {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'postgres',
+            'NAME': 'drf4b',
             'USER': 'postgres',
             'PASSWORD': 'postgres',
             'HOST': '127.0.0.1',
@@ -141,4 +141,10 @@ MEDIA_ROOT = [BASE_DIR / "media"]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated"
+        , ]
+}
 # AUTH_USER_MODEL = "accounts.CustomUser"
+AUTH_USER_MODEL = "accounts.CustomUser"
